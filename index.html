@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Nurul</title>
+    <title>Our Eternal Love</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,11 +12,10 @@
 <body class="bg-soft-lilac text-royal-blue font-montserrat">
 
     <nav class="navbar-modern">
-        <div class="nav-left">
-            <i class="fa-solid fa-bars-staggered menu-hamburger" onclick="toggleSidebar()"></i>
-            <span class="brand-title">All About Nurul</span>
-        </div>
-
+    <div class="nav-left">
+        <i class="fa-solid fa-bars-staggered menu-hamburger" onclick="toggleSidebar()"></i>
+        <a href="#" onclick="showPage('landing')" class="brand-title cursor-pointer hover:text-lilac transition-colors">About Nurul</a>
+    </div>
         <div class="search-container">
             <div class="search-input-wrapper">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
@@ -24,12 +23,11 @@
             </div>
             <div id="search-drop" class="search-dropdown">
                 <p class="dropdown-label">REKOMENDASI</p>
-                <a href="#" onclick="showPage('nurul')">Tentang Nurul</a>
+                <a href="#" onclick="showPage('about')">Tentang Kita</a>
                 <a href="#" onclick="showPage('photo')">Album Foto</a>
                 <a href="#" onclick="showPage('pesan')">Lihat Pesan</a>
             </div>
         </div>
-
         <button class="btn-modern-nav" onclick="showPage('pesan')">PESAN</button>
     </nav>
 
@@ -37,7 +35,7 @@
         <span class="close-sidebar" onclick="toggleSidebar()">&times;</span>
         <ul class="nav-menu">
             <li><a href="#" onclick="showPage('landing')">Beranda</a></li>
-            <li><a href="#" onclick="showPage('nurul')">Nurul</a></li>
+            <li><a href="#" onclick="showPage('about')">Tentang Kita</a></li>
             <li><a href="#" onclick="showPage('photo')">Album Foto</a></li>
             <li><a href="#" onclick="showPage('pesan')">Pesan</a></li>
         </ul>
@@ -50,70 +48,79 @@
                 <p class="wedding-font italic text-2xl mb-2">Our Eternal Love</p>
                 <h1 class="main-title wedding-font uppercase">Akmal nur <br><span class="text-lilac">rizka aul</span></h1>
                 <p class="hero-subtitle">"Karena setiap detik bersamamu adalah anugerah terbesar dalam hidupku."</p>
-<div class="apple-music-widget">
-    <div class="apple-container" id="apple-container">
-        <div class="apple-item active" onclick="playMusic(0, 'Nadin Amizah - Ah.mp3')">
-            <div class="glass-card">
-                <div class="album-art">
-                    <img src="Ah - Cover.jpg" alt="Cover">
+                <div class="apple-music-widget">
+                    <div class="apple-container" id="apple-container">
+                        <div class="apple-item active" onclick="playMusic(0, 'landing_page/Nadin Amizah - Ah.mp3')">
+                            <div class="glass-card">
+                                <div class="album-art"><img src="landing_page/Ah - Cover.jpg" alt="Cover"></div>
+                                <div class="song-info">
+                                    <h4 class="song-title">Ah</h4>
+                                    <p class="artist-name">Nadin Amizah</p>
+                                </div>
+                                <div class="play-icon" id="play-icon-0"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                        </div>
+                        <div class="apple-item" onclick="playMusic(1, 'landing_page/NIKI.mp3')">
+                            <div class="glass-card">
+                                <div class="album-art"><img src="landing_page/You'll Be In My Heart - Cover.jpg" alt="Cover"></div>
+                                <div class="song-info">
+                                    <h4 class="song-title">You'll Be In My Heart</h4>
+                                    <p class="artist-name">Niki</p>
+                                </div>
+                                <div class="play-icon" id="play-icon-1"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="apple-nav">
+                        <button onclick="event.stopPropagation(); moveApple(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                        <span id="apple-indicator">1 / 2</span>
+                        <button onclick="event.stopPropagation(); moveApple(1)"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
                 </div>
-                <div class="song-info">
-                    <h4 class="song-title">Ah</h4>
-                    <p class="artist-name">Nadin Amizah</p>
-                </div>
-                <div class="play-icon" id="play-icon-0"><i class="fa-solid fa-play"></i></div>
             </div>
         </div>
-        <div class="apple-item" onclick="playMusic(1, 'NIKI.mp3')">
-            <div class="glass-card">
-                <div class="album-art">
-                    <img src="You'll Be In My Heart - Cover.jpg" alt="Cover">
-                </div>
-                <div class="song-info">
-                    <h4 class="song-title">You'll Be In My Heart</h4>
-                    <p class="artist-name">Niki</p>
-                </div>
-                <div class="play-icon" id="play-icon-1"><i class="fa-solid fa-play"></i></div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="apple-nav">
-        <button onclick="event.stopPropagation(); moveApple(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-        <span id="apple-indicator">1 / 2</span>
-        <button onclick="event.stopPropagation(); moveApple(1)"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
-</div>
     </section>
 
-    <section id="page-nurul" class="hidden-page min-h-screen pt-32 px-10 pb-20">
+    <section id="page-about" class="hidden-page min-h-screen pt-32 px-6 pb-20">
         <div class="max-w-4xl mx-auto">
-            <h2 class="wedding-font text-5xl mb-2 text-center">Post</h2>
-            <div class="title-line mx-auto"></div>
-            <div id="nurul-feed-grid" class="grid grid-cols-3 gap-2 md:gap-4 mt-10"></div>
+            <div class="text-center mb-10">
+                <h2 class="wedding-font text-5xl mb-2">Tentang Kita</h2>
+                <div class="title-line mx-auto" style="width: 80px;"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="relative about-decoration">
+                    <div class="p-4 bg-white shadow-xl rounded-2xl rotate-3">
+                        <img src="landing_page/landing_page.jpeg" class="rounded-lg w-full h-80 object-cover" alt="Kita">
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 p-4 bg-lilac shadow-xl rounded-2xl -rotate-6 w-32 h-32 flex items-center justify-center text-white">
+                        <i class="fa-solid fa-heart text-4xl animate-pulse"></i>
+                    </div>
+                </div>
+                <div class="space-y-6 text-royal-blue leading-relaxed">
+                    <p class="wedding-font italic text-xl">"Dua jiwa namun satu tujuan..."</p>
+                    <p>Semua bermula dari pertemuan sederhana yang tak pernah kami duga akan menjadi perjalanan sepanjang ini. Kami percaya bahwa setiap pertemuan bukan sekadar kebetulan, melainkan takdir yang tertulis indah.</p>
+                    <p>Perjalanan kami adalah tentang saling memahami, tumbuh bersama, dan menemukan kenyamanan di tengah riuhnya dunia. nurul bukan hanya tentang nama, tapi tentang ribuan kenangan yang terus kami bangun setiap harinya.</p>
+                    <div class="p-6 bg-white border-l-4 border-lilac rounded-r-2xl italic shadow-sm">
+                        "Terima kasih telah menjadi bagian terindah dalam hidupku. Mari melangkah lebih jauh lagi."
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <audio id="main-audio" src=""></audio>
 
     <section id="page-photo" class="hidden-page min-h-screen pt-32 px-10 pb-20">
-    <div class="max-w-6xl mx-auto text-center">
-        <h2 class="wedding-font text-5xl mb-2">Album Foto</h2>
-        <div class="title-line-center mx-auto mb-10"></div>
-        
-        <div class="album-carousel-wrapper">
-            <div id="carousel-container" class="carousel-container">
-                </div>
-            
-            <button class="carousel-btn prev-btn" onclick="moveCarousel(-1)">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button class="carousel-btn next-btn" onclick="moveCarousel(1)">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="wedding-font text-5xl mb-2">Album Foto</h2>
+            <div class="title-line mx-auto mb-10" style="width: 80px;"></div>
+            <div class="album-carousel-wrapper">
+                <div id="carousel-container" class="carousel-container"></div>
+                <button class="carousel-btn prev-btn" onclick="moveCarousel(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carousel-btn next-btn" onclick="moveCarousel(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="page-pesan" class="hidden-page min-h-screen pt-32 px-10 pb-20">
         <div class="max-w-6xl mx-auto">
@@ -124,39 +131,11 @@
         <button class="fab-add" onclick="openModal()"><i class="fa-solid fa-plus"></i></button>
     </section>
 
-    <div id="modal-post" class="modal-backdrop hidden" onclick="closePostModal()">
-        <div class="post-modal-card" onclick="event.stopPropagation()">
-            <div class="post-flex-container">
-                <div class="post-media-side">
-                    <div id="post-slider" class="post-slider-inner"></div>
-                    <button class="slide-ctrl prev" onclick="changePostSlide(-1)">&#10094;</button>
-                    <button class="slide-ctrl next" onclick="changePostSlide(1)">&#10095;</button>
-                </div>
-                <div class="post-content-side">
-                    <div class="post-header-user">
-                        <div class="user-avatar-mini"></div>
-                        <div class="user-name-info">
-                            <p class="uname">nurull</p>
-                            <p class="uloc">Kenangan Kita</p>
-                        </div>
-                    </div>
-                    <div class="post-desc-box">
-                        <p id="post-caption-full"></p>
-                    </div>
-                    <div class="post-modal-footer">
-                        <button class="btn-modern-solid w-full" onclick="closePostModal()">Tutup</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div id="modal-box" class="modal-backdrop hidden">
         <div class="modal-card">
             <h3 class="wedding-font modal-title">Tulis Pesan</h3>
-            <p class="modal-desc">Pesanmu akan tersimpan abadi di sini.</p>
             <textarea id="msg-input" placeholder="Ketik pesanmu di sini..."></textarea>
-            <div class="modal-footer">
+            <div class="modal-footer flex justify-between">
                 <button onclick="closeModal()" class="btn-cancel">Batal</button>
                 <button class="btn-modern-solid" onclick="submitPesan()">KIRIM SEKARANG</button>
             </div>
@@ -167,9 +146,7 @@
         <div class="modal-card" onclick="event.stopPropagation()">
             <h3 class="wedding-font modal-title">Pesan Kenangan</h3>
             <div id="isi-pesan-lengkap" class="read-content"></div>
-            <div class="modal-footer">
-                <button onclick="closeReadModal()" class="btn-modern-solid">Tutup</button>
-            </div>
+            <button onclick="closeReadModal()" class="btn-modern-solid w-full mt-4">Tutup</button>
         </div>
     </div>
 
