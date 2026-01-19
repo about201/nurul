@@ -155,3 +155,72 @@ setInterval(() => {
 }, 300);
 
 document.addEventListener('DOMContentLoaded', () => { loadMessages(); showPage('landing'); });
+
+// FITUR CEK ULANG TAHUN (HANYA 20 JANUARI)
+function checkBirthday() {
+    const today = new Date();
+    const date = today.getDate();
+    const month = today.getMonth() + 1; // Januari adalah 0, jadi +1
+
+    // Cek jika Tanggal 20 dan Bulan 1 (Januari)
+    if (date === 20 && month === 1) {
+        const bdayModal = document.getElementById('birthday-modal');
+        if (bdayModal) {
+            // Munculkan modal setelah 2 detik halaman terbuka agar ada efek kejutan
+            setTimeout(() => {
+                bdayModal.classList.remove('hidden');
+                triggerConfetti(); // Opsional: memicu partikel bunga
+            }, 2000);
+        }
+    }
+}
+
+function closeBirthday() {
+    document.getElementById('birthday-modal').classList.add('hidden');
+}
+
+function triggerPartyPopper() {
+    const container = document.getElementById('confetti-container');
+    const colors = ['#ff69b4', '#ff1493', '#ffd700', '#00ced1', '#adff2f', '#ffffff'];
+    
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        
+        // Posisi acak dan warna acak
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Variabel custom untuk arah lemparan di CSS
+        confetti.style.setProperty('--x', Math.random());
+        
+        // Ukuran dan durasi acak
+        const size = Math.random() * 10 + 5 + 'px';
+        confetti.style.width = size;
+        confetti.style.height = size;
+        confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        confetti.style.animationDelay = (Math.random() * 0.5) + 's';
+        
+        container.appendChild(confetti);
+        
+        // Hapus elemen setelah animasi selesai agar tidak berat
+        setTimeout(() => confetti.remove(), 4000);
+    }
+}
+
+// Update fungsi checkBirthday untuk memicu ledakan
+function checkBirthday() {
+    const today = new Date();
+    if (today.getDate() === 20 && (today.getMonth() + 1) === 1) {
+        setTimeout(() => {
+            document.getElementById('birthday-modal').classList.remove('hidden');
+            triggerPartyPopper(); // Pemicu ledakan party popper
+        }, 1500);
+    }
+}
+
+// Pastikan fungsi dipanggil saat load
+document.addEventListener('DOMContentLoaded', () => {
+    // Fungsi loadMessages & showPage yang lama tetap ada di sini
+    checkBirthday(); 
+});
